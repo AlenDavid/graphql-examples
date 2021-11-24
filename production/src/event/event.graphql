@@ -1,0 +1,27 @@
+scalar Email
+
+type Event {
+  id: ID!
+  beginsAt: String!
+  host: String!
+}
+
+input EventType {
+  beginsAt: String!
+  host: String!
+}
+
+input UpdateUser {
+  beginsAt: String
+  host: String
+}
+
+type Query {
+  events: [Event!]
+}
+
+type Mutation {
+  createEvent(beginsAt: String!, host: String!): Event
+  updateEvent(id: String!, beginsAt: String, host: String): Event
+  deleteEvent(id: String!): Event
+}

@@ -7,6 +7,7 @@ import 'dotenv/config';
 import { APP_INTERCEPTOR, APP_FILTER } from '@nestjs/core';
 import { LoggingInterceptor } from './interceptors/logging.interceptor';
 import { HttpExceptionFilter } from './filters/http-exception.filter';
+import { EventModule } from './event/event.module';
 
 const host = process.env.DATABASE_HOST || 'localhost';
 @Module({
@@ -25,6 +26,7 @@ const host = process.env.DATABASE_HOST || 'localhost';
     }),
     MongooseModule.forRoot(`mongodb://${host}/nest`),
     UserModule,
+    EventModule,
     AuthModule,
   ],
   controllers: [],

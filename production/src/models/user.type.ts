@@ -7,10 +7,12 @@ export class UserType {
   @Field()
   @IsEmail()
   email: string;
+
   @Field()
   @IsString()
   @IsNotEmpty()
   password: string;
+
   @Field()
   @IsOptional()
   userRole: UserRoles;
