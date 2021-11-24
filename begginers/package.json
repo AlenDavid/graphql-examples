@@ -1,0 +1,22 @@
+{
+  "name": "graphql-hello-world",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^3.5.0",
+    "graphql": "^16.0.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.3.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3"
+  }
+}
