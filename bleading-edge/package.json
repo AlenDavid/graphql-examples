@@ -1,0 +1,32 @@
+{
+  "name": "neo4j-ql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon -r esm -e js,json,graphql src/index.js",
+    "db:flush": "node -r esm src/tools/flush.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@neo4j/graphql": "^2.3.0",
+    "@neo4j/graphql-ogm": "^2.3.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.5.1",
+    "graphql-tools": "^7.0.5",
+    "jsonwebtoken": "^8.5.1",
+    "neo4j-driver": "^4.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.31.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.3.2"
+  }
+}

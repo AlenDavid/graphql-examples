@@ -1,0 +1,23 @@
+enum EmployeeType {
+  DEV
+  QA
+  DEVOPS
+  DESIGNER
+  MARKETING
+  C_LEVEL
+  VP
+  OTHER
+}
+
+type Employee {
+  id: ID! @id
+  name: String! @default(value: "New Team")
+
+  positions: [EmployeeType]
+  worksAt: [Team] @relationship(type: "BELONGS_TO_TEAM", direction: IN)
+  worksWith: [Employee] @relationship(type: "WORKS_WITH", direction: IN)
+
+  createdAt: DateTime! @timestamp(operations: [CREATE])
+  joinedAt: DateTime! @timestamp(operations: [CREATE])
+  updatedAt: DateTime! @timestamp(operations: [UPDATE])
+}

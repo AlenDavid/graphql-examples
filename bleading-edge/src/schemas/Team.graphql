@@ -1,0 +1,7 @@
+type Team {
+  id: ID! @id
+  name: String! @default(value: "New Team")
+
+  createdAt: DateTime! @timestamp(operations: [CREATE])
+  updatedAt: DateTime! @timestamp(operations: [UPDATE])
+}
