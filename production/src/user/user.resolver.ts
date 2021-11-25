@@ -19,18 +19,18 @@ export class UserResolver {
   // @Roles("Admin")
   @Query(returns => [UserType])
   async users() {
-    return await this.userService.showAll();
+    return this.userService.showAll();
   }
 
   @Query(returns => UserType)
   async user(@Args('email') email: string) {
-    return await this.userService.getUser(email);
+    return this.userService.getUser(email);
   }
 
   @Mutation(returns => UserType)
   async delete(@Args('email') email: string, @CurrentUser() user: User) {
     if (email === user.email) {
-      return await this.userService.deleteUserByEmail(email);
+      return this.userService.deleteUserByEmail(email);
     } else {
       throw new UnauthorizedException();
     }
@@ -43,7 +43,7 @@ export class UserResolver {
     @CurrentUser() currentUser: User,
   ) {
     if (id === currentUser.id || currentUser.userRole === UserRoles.ADMIN) {
-      return await this.userService.update(id, user, currentUser.userRole);
+      return this.userService.update(id, user, currentUser.userRole);
     } else {
       throw new UnauthorizedException();
     }

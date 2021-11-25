@@ -26,10 +26,6 @@ const typeDefs = gql`
     relatesTo(filter: String): [Thing]
   }
 
-  type Query {
-    books: [Book]
-  }
-
   # The "Query" type is special: it lists all of
   # the available queries that clients can execute,
   # along with the return type for each.
@@ -69,22 +65,24 @@ const resolvers = {
     books: () => books,
   },
   Mutation: {
-    newBook: (_, title) => {
+    newBook: (_, { title }) => {
       const book = {
         title,
       };
 
       books.push(book);
 
-      return book;
+      return books;
     },
 
-    newThink: (_, label) => {
+    newThing: (_, { label }) => {
       const id = uuid();
+
       const thing = {
         id,
         label,
       };
+
       things.push(thing);
 
       return thing;

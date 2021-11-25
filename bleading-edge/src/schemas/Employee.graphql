@@ -5,6 +5,7 @@ enum EmployeeType {
   DESIGNER
   MARKETING
   C_LEVEL
+  TECH_LEAD
   VP
   OTHER
 }
